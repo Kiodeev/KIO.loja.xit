@@ -2,189 +2,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIO.Xit-Oficial - Loja de Mod Menus</title>
+  <title>KIO.Xit-Oficial</title>
   <style>
-    :root {
-      --primary-color: #00ff88;
-      --background: #0a0a0a;
-      --card-bg: rgba(0, 0, 0, 0.6);
-      --text-color: #ffffff;
-    }* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--background);
-  color: var(--text-color);
-  font-family: Arial, sans-serif;
-}
-
-header {
-  padding: 1rem;
-  background: #000000aa;
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  text-shadow: 0 0 10px var(--primary-color);
-}
-
-.container {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card {
-  background: var(--card-bg);
-  border-radius: 15px;
-  padding: 2rem;
-  margin-top: 2rem;
-  box-shadow: 0 0 15px var(--primary-color);
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.card h2 {
-  margin-bottom: 1rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 0.8rem;
-  padding-left: 2.5rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-}
-
-.form-group img {
-  position: absolute;
-  left: 0.8rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  opacity: 0.7;
-}
-
-button {
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 10px;
-  background: var(--primary-color);
-  color: black;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #00cc66;
-}
-
-.shop {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.product {
-  background: var(--card-bg);
-  border-radius: 15px;
-  padding: 1.5rem;
-  margin: 1rem;
-  box-shadow: 0 0 10px var(--primary-color);
-  width: 90%;
-  max-width: 600px;
-}
-
-.product h3 {
-  margin-bottom: 0.5rem;
-}
-
-.pix-box {
-  background: #111;
-  color: var(--text-color);
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px var(--primary-color);
-  display: none;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #111);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #00ff88;
+      color: black;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 0 15px #00ff88;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 20px #00ff88aa;
+    }
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 8px;
+      background: #222;
+      color: white;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      background: #00ff88;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00dd77;
+    }
+    .hidden {
+      display: none;
+    }
+    .loja {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .produto {
+      background: #111;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px #00ff88aa;
+    }
+    .pix-box {
+      background: #1f1f1f;
+      border: 1px solid #00ff88;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-top: 1rem;
+      color: #00ff88;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .download-link {
+      margin-top: 1rem;
+      display: none;
+    }
+    .download-link a {
+      background: #00ff88;
+      color: #000;
+      text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
-  <header>KIO.Xit-Oficial</header>
-  <div class="container">
-    <div class="card" id="register-card">
-      <h2>Cadastro</h2>
-      <div class="form-group">
-        <img src="https://img.icons8.com/ios-glyphs/30/user--v1.png" />
-        <input type="text" id="name" placeholder="Seu nome">
-      </div>
-      <div class="form-group">
-        <img src="https://img.icons8.com/ios-glyphs/30/new-post.png" />
-        <input type="email" id="email" placeholder="Seu e-mail">
-      </div>
-      <div class="form-group">
-        <img src="https://img.icons8.com/ios-glyphs/30/lock--v1.png" />
-        <input type="password" id="password" placeholder="Sua senha">
-      </div>
+  <header>KIO.Xit-Oficial</header>  <div class="container" id="cadastro-container">
+    <div class="card">
+      <h2 style="text-align:center; color:#00ff88;">Cadastro</h2>
+      <input type="text" id="nome" placeholder="Seu nome">
+      <input type="email" id="email" placeholder="Seu e-mail">
+      <input type="password" id="senha" placeholder="Sua senha">
       <button onclick="cadastrar()">Cadastrar</button>
-    </div><div class="shop" id="shop">
-  <div class="product">
-    <h3>VortexGraal v1.0</h3>
-    <p>Preço: R$25,00</p>
-    <button onclick="mostrarPagamento()">Comprar</button>
-    <div class="pix-box" id="pix-box">
-      <p><strong>Chave Pix:</strong></p>
-      <p style="word-break: break-all">2c5a1867-47ac-4945-82d4-d9635d21ea47</p>
-      <button onclick="baixarAPK()">Download liberado</button>
     </div>
-  </div>
-</div>
-
+  </div>  <div class="container hidden" id="loja-container">
+    <h2 style="color:#00ff88">Loja</h2>
+    <div class="produto">
+      <h3>VortexGraal v1.0</h3>
+      <p>Preço: R$25,00</p>
+      <button onclick="mostrarPix()">Comprar</button>
+      <div class="pix-box" id="pix-box">
+        <p><strong>Chave Pix:</strong><br>2c5a1867-47ac-4945-82d4-d9635d21ea47</p>
+        <p>Após o pagamento, clique abaixo para baixar:</p>
+      </div>
+      <div class="download-link" id="download-link">
+        <a href="com.quatroplay.GraalClassic_2.2.apk" download>Baixar VortexGraal</a>
+      </div>
+    </div>
   </div>  <script>
     function cadastrar() {
-      const nome = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const senha = document.getElementById('password').value.trim();
-
-      if (!nome || !email || !senha) {
-        alert("Preencha todos os campos corretamente!");
-        return;
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+      if (nome && email && senha) {
+        document.getElementById("cadastro-container").classList.add("hidden");
+        document.getElementById("loja-container").classList.remove("hidden");
+      } else {
+        alert("Preencha todos os campos corretamente.");
       }
-
-      localStorage.setItem('usuario', JSON.stringify({ nome, email, senha }));
-      document.getElementById('register-card').style.display = 'none';
-      document.getElementById('shop').style.display = 'flex';
     }
 
-    function mostrarPagamento() {
-      document.getElementById('pix-box').style.display = 'block';
-    }
-
-    function baixarAPK() {
-      window.location.href = 'com.quatroplay.GraalClassic_2.2.apk';
+    function mostrarPix() {
+      document.getElementById("pix-box").style.display = "block";
+      document.getElementById("download-link").style.display = "block";
     }
   </script></body>
 </html>
