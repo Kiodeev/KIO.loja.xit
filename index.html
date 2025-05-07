@@ -1,144 +1,160 @@
 <!DOCTYPE html><html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIO.Xit-Oficial</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIO.Xit - Loja Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #111);
-      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f0f0f, #0a0a0a);
+      color: #00ff99;
       overflow-x: hidden;
     }
     header {
-      background-color: #00ff88;
-      color: black;
-      padding: 1rem 2rem;
+      background: #000000cc;
+      padding: 1rem;
       text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      box-shadow: 0 0 15px #00ff88;
+      font-size: 2rem;
+      color: #00ff99;
+      box-shadow: 0 0 20px #00ff99;
     }
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      max-width: 500px;
+      margin: 2rem auto;
       padding: 2rem;
-    }
-    .card {
       background: rgba(0, 0, 0, 0.6);
-      border-radius: 16px;
-      padding: 2rem;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 0 20px #00ff88aa;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #00ff99aa;
     }
-    input {
-      width: 100%;
-      padding: 0.8rem;
-      margin: 0.5rem 0;
-      border: none;
-      border-radius: 8px;
-      background: #222;
-      color: white;
-      font-size: 1rem;
-    }
-    button {
-      width: 100%;
-      padding: 0.8rem;
-      margin-top: 1rem;
-      background: #00ff88;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #00dd77;
-    }
-    .hidden {
-      display: none;
-    }
-    .loja {
-      margin-top: 3rem;
+    .container h2 {
       text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      border: none;
+      border-radius: 10px;
+      background: #111;
+      color: #00ff99;
+      font-size: 1rem;
+    }
+    .form-group i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00ff99aa;
+    }
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      background: #00ff99;
+      color: #000;
+      font-weight: bold;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #00cc77;
+    }
+    #loja {
+      display: none;
+      margin-top: 3rem;
     }
     .produto {
       background: #111;
-      border-radius: 16px;
       padding: 1.5rem;
-      margin: 1rem auto;
-      max-width: 500px;
-      box-shadow: 0 0 10px #00ff88aa;
-    }
-    .pix-box {
-      background: #1f1f1f;
-      border: 1px solid #00ff88;
-      border-radius: 12px;
-      padding: 1rem;
       margin-top: 1rem;
-      color: #00ff88;
-      font-size: 0.9rem;
-      display: none;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00ff99aa;
     }
-    .download-link {
+    .produto h3 {
+      margin: 0 0 1rem 0;
+    }
+    .produto p {
+      margin: 0.5rem 0;
+    }
+    .produto button {
       margin-top: 1rem;
-      display: none;
-    }
-    .download-link a {
-      background: #00ff88;
+      background: #00ff99;
       color: #000;
-      text-decoration: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
-      display: inline-block;
+      border: none;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .produto button:hover {
+      background: #00cc77;
+    }
+    .pix-section {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #000000aa;
+      border-radius: 10px;
+    }
+    .pix-section p {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
-  <header>KIO.Xit-Oficial</header>  <div class="container" id="cadastro-container">
-    <div class="card">
-      <h2 style="text-align:center; color:#00ff88;">Cadastro</h2>
-      <input type="text" id="nome" placeholder="Seu nome">
-      <input type="email" id="email" placeholder="Seu e-mail">
-      <input type="password" id="senha" placeholder="Sua senha">
-      <button onclick="cadastrar()">Cadastrar</button>
+  <header>KIO.Xit - Loja Oficial</header>  <div class="container" id="cadastro">
+    <h2>Cadastro</h2>
+    <div class="form-group">
+      <i>&#128100;</i>
+      <input type="text" placeholder="Seu nome" id="nome" />
     </div>
-  </div>  <div class="container hidden" id="loja-container">
-    <h2 style="color:#00ff88">Loja</h2>
+    <div class="form-group">
+      <i>&#9993;</i>
+      <input type="email" placeholder="Seu e-mail" id="email" />
+    </div>
+    <div class="form-group">
+      <i>&#128274;</i>
+      <input type="password" placeholder="Senha" id="senha" />
+    </div>
+    <button class="btn" onclick="registrar()">Cadastrar</button>
+  </div>  <div class="container" id="loja">
+    <h2>Loja</h2>
     <div class="produto">
-      <h3>VortexGraal v1.0</h3>
-      <p>Preço: R$25,00</p>
+      <h3>VortexGraal 1.0</h3>
+      <p>Mod menu completo para Graal Classic</p>
+      <p><strong>Preço:</strong> R$25</p>
       <button onclick="mostrarPix()">Comprar</button>
-      <div class="pix-box" id="pix-box">
-        <p><strong>Chave Pix:</strong><br>2c5a1867-47ac-4945-82d4-d9635d21ea47</p>
-        <p>Após o pagamento, clique abaixo para baixar:</p>
-      </div>
-      <div class="download-link" id="download-link">
-        <a href="com.quatroplay.GraalClassic_2.2.apk" download>Baixar VortexGraal</a>
+      <div class="pix-section" id="pixBox">
+        <p><strong>Pix copiar e colar:</strong></p>
+        <p id="chavePix">2c5a1867-47ac-4945-82d4-d9635d21ea47</p>
+        <p>Após pagamento, clique para baixar:</p>
+        <a href="com.quatroplay.GraalClassic_2.2.apk" download><button>Download</button></a>
       </div>
     </div>
   </div>  <script>
-    function cadastrar() {
-      const nome = document.getElementById("nome").value;
-      const email = document.getElementById("email").value;
-      const senha = document.getElementById("senha").value;
-      if (nome && email && senha) {
-        document.getElementById("cadastro-container").classList.add("hidden");
-        document.getElementById("loja-container").classList.remove("hidden");
-      } else {
+    function registrar() {
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value.trim();
+      if (!nome || !email || !senha) {
         alert("Preencha todos os campos corretamente.");
+        return;
       }
+      localStorage.setItem('nome', nome);
+      localStorage.setItem('email', email);
+      localStorage.setItem('senha', senha);
+      document.getElementById('cadastro').style.display = 'none';
+      document.getElementById('loja').style.display = 'block';
     }
-
     function mostrarPix() {
-      document.getElementById("pix-box").style.display = "block";
-      document.getElementById("download-link").style.display = "block";
+      document.getElementById('pixBox').style.display = 'block';
     }
   </script></body>
 </html>
