@@ -1,129 +1,121 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIO.Xit-Oficial</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja KIO.Xit-Oficial</title>
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }body {
-  background: linear-gradient(135deg, #001f1f, #003d3d);
-  color: #fff;
-  padding: 20px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  color: #00ffcc;
-  text-shadow: 0 0 10px #00ffcc;
-}
-
-.produto {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid #00ffcc;
-  border-radius: 15px;
-  padding: 20px;
-  max-width: 500px;
-  margin: 0 auto;
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-}
-
-.produto h2 {
-  color: #00ffcc;
-  margin-bottom: 10px;
-}
-
-.produto p {
-  margin-bottom: 20px;
-}
-
-.produto button {
-  background-color: #00ffcc;
-  color: #000;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.produto button:hover {
-  background-color: #00ccaa;
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background-color: #002222;
-  border-radius: 12px;
-  padding: 30px;
-  max-width: 400px;
-  width: 100%;
-  color: #00ffcc;
-  text-align: center;
-  box-shadow: 0 0 20px #00ffcc;
-}
-
-.popup-content p {
-  margin-bottom: 15px;
-}
-
-.popup-content a {
-  display: inline-block;
-  margin-top: 10px;
-  background: #00ffcc;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #0f0;
+      overflow-x: hidden;
+    }
+    header {
+      background: #0a0;
+      padding: 1em;
+      text-align: center;
+      box-shadow: 0 0 15px #0f0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #000;
+    }
+    main {
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+    }
+    .produto {
+      background: rgba(0, 255, 0, 0.1);
+      padding: 1.5em;
+      margin-bottom: 2em;
+      border: 1px solid #0f0;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0f0;
+    }
+    .produto h2 {
+      margin-top: 0;
+      color: #0f0;
+    }
+    .produto p {
+      margin: 0.5em 0;
+    }
+    .btn-comprar {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      margin-top: 1em;
+      background-color: #0f0;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn-comprar:hover {
+      background-color: #0c0;
+    }
+    .pagamento {
+      display: none;
+      background: rgba(0, 0, 0, 0.85);
+      color: #0f0;
+      padding: 2em;
+      border-radius: 10px;
+      margin-top: 1em;
+      box-shadow: 0 0 15px #0f0;
+    }
+    .pagamento.visible {
+      display: block;
+    }
+    .pix-code {
+      background: #111;
+      padding: 1em;
+      word-break: break-all;
+      margin-top: 1em;
+      border-left: 4px solid #0f0;
+    }
+    .download {
+      margin-top: 2em;
+      text-align: center;
+    }
+    .download a {
+      text-decoration: none;
+      color: #000;
+      background: #0f0;
+      padding: 1em 2em;
+      border-radius: 5px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #0f0;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>KIO.Xit-Oficial</h1>
-  </header>  <section class="produto">
-    <h2>VortexGraal v1.0</h2>
-    <p>Mod Menu completo e testado, pronto para uso no jogo Graal Classic!</p>
-    <p><strong>Preço:</strong> R$25,00</p>
-    <button onclick="mostrarPopup()">Comprar</button>
-  </section>  <div class="popup" id="pagamentoPopup">
-    <div class="popup-content">
-      <h2>Pagamento via Pix</h2>
-      <p>Copie e cole o código Pix abaixo:</p>
-      <p style="background:#001010;padding:10px;border-radius:6px;font-size:0.9em;word-wrap:break-word">2c5a1867-47ac-4945-82d4-d9635d21ea47</p>
-      <p>Após o pagamento, clique abaixo para baixar:</p>
-      <a href="https://www.mediafire.com/file/ol8w81zg8o3n2f8/VortexGraal_v1.0.apk/file" target="_blank">Baixar VortexGraal v1.0</a>
-      <br><br>
-      <button onclick="fecharPopup()" style="margin-top: 15px; background:#333; color:#fff;">Fechar</button>
+  </header>
+  <main>
+    <div class="produto">
+      <h2>VortexGraal v1.0</h2>
+      <p>Mod Menu premium para o jogo GraalClassic.</p>
+      <p><strong>Preço:</strong> R$ 25,00</p>
+      <button class="btn-comprar" onclick="mostrarPagamento()">Comprar</button>
+      <div class="pagamento" id="pagamentoBox">
+        <h3>Pagamento via Pix</h3>
+        <p>Chave Pix (copie e cole):</p>
+        <div class="pix-code">2c5a1867-47ac-4945-82d4-d9635d21ea47</div>
+        <p>Após o pagamento, clique no botão abaixo para baixar automaticamente.</p>
+        <div class="download">
+          <a href="https://www.mediafire.com/file/ol8w81zg8o3n2f8/VortexGraal_v1.0.apk/file" target="_blank">Baixar VortexGraal v1.0</a>
+        </div>
+      </div>
     </div>
-  </div>  <script>
-    function mostrarPopup() {
-      document.getElementById('pagamentoPopup').style.display = 'flex';
+  </main>
+  <script>
+    function mostrarPagamento() {
+      document.getElementById('pagamentoBox').classList.add('visible');
     }
-
-    function fecharPopup() {
-      document.getElementById('pagamentoPopup').style.display = 'none';
-    }
-  </script></body>
+  </script>
+</body>
 </html>
